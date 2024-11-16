@@ -125,7 +125,7 @@ function buildFarm() {
     resources.buildings.farms[`farm${farmNumber}Level`] = 1;
     resources.buildings.farms.count += 1;
 
-    if(resources.buildings.farms.count > resources.buildings.maxCount) {
+    if(resources.buildings.farms.count >= resources.buildings.maxCount + 1) {
         return alert('You reached the max number of this building!');
     }
 
@@ -139,7 +139,7 @@ function buildMine() {
     resources.buildings.mines[`mine${mineNumber}Level`] = 1;
     resources.buildings.mines.count += 1;
 
-    if(resources.buildings.mines.count > resources.buildings.maxCount) {
+    if(resources.buildings.mines.count >= resources.buildings.maxCount + 1) {
         alert('You reached the max number of this building!');
     }
 
@@ -153,7 +153,7 @@ function buildHouse() {
     resources.buildings.houses[`house${houseNumber}Level`] = 1;
     resources.buildings.houses.count += 1;
 
-    if(resources.buildings.houses.count > resources.buildings.maxCount) {
+    if(resources.buildings.houses.count >= resources.buildings.maxCount + 1) {
         return alert('You reached the max number of this building!');
     }
 
