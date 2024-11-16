@@ -305,7 +305,7 @@ function renderBuildingButtons() {
 
     const buildMineButton = document.createElement('button');
     buildMineButton.className = 'tooltip';
-    buildMineButton.textContent = 'Build New Farm';
+    buildMineButton.textContent = 'Build New Mine';
     buildMineButton.onclick = buildMine;
 
     const buildMineTooltip = document.createElement('span');
@@ -318,7 +318,7 @@ function renderBuildingButtons() {
 
     const buildHouseButton = document.createElement('button');
     buildHouseButton.className = 'tooltip';
-    buildHouseButton.textContent = 'Build New Farm';
+    buildHouseButton.textContent = 'Build New House';
     buildHouseButton.onclick = buildHouse;
 
     const buildHouseTooltip = document.createElement('span');
