@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivilWars</title>
+    <link referrerpolicy="origin" rel="stylesheet" type="text/css" href="game_layout.css" />
+
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Civilization Wars</h1>
+        <div id="timer" style="position: absolute; top: 10px; right: 10px;">00:00:00</div>
+    </header>
+
+    <main>
+        <section id="resources">
+            <h2>Your resources</h2>
+            <p>Population: <span id="population">0</span></p>
+            <p>Food: <span id="food">0</span></p>
+            <p>Gold: <span id="gold">0</span></p>
+
+            <h3>Buildings</h3>
+            <p>Farms: <span id="farms">2</span></p>
+            <p>Houses: <span id="houses">2</span></p>
+            <p>Mines: <span id="mines">2</span></p>
+        </section>
+
+        <section id="actions">
+            <h2>Actions</h2>
+            <div id="buildingActions">
+                
+            </div>
+            <button onclick="explore()">Explore</button>
+            <button onclick="trade()">Trade</button>
+        </section>
+
+        <section id="log">
+            <h2>Game Log</h2>
+            <div id="logEntries">
+                <!-- Logs will appear here -->
+            </div>
+        </section>
+    </main>
+
+    <script type="module" referrerpolicy="origin" src="game.js"></script>
+    <script src="buildingLogic.js"></script>
+</body>
+</html>
