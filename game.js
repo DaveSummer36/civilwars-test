@@ -139,8 +139,8 @@ function buildMine() {
     resources.buildings.mines[`mine${mineNumber}Level`] = 1;
     resources.buildings.mines.count += 1;
 
-    if(resources.buildings.mines.count === resources.buildings.maxCount) {
-        return alert('You reached the max number of this building!');
+    if(resources.buildings.mines.count >== resources.buildings.maxCount) {
+        alert('You reached the max number of this building!');
     }
 
     logAction(`New Mine ${mineNumber} built at Level 1.`);
