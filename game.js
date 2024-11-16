@@ -4,8 +4,8 @@ let gameTime = parseInt(localStorage.getItem('gameTime')) || 0;
 let resources = {
     level: 1,
     population: 10,
-    food: 50,
-    gold: 90,
+    food: 20,
+    gold: 50,
     buildings: {
         farms: { count: 2, farm1Level: 1, farm2Level: 1 },
         mines: { count: 2, mine1Level: 1, mine2Level: 1 },
