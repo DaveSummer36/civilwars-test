@@ -1,18 +1,77 @@
-const buildingLogic = new BuildingLogic();
+let levelUpgradeCosts = {
+    1: { food: 25, gold: 50 },
+    2: { food: 50, gold: 100 },
+    3: { food: 75, gold: 150 },
+    4: { food: 125, gold: 200 },
+    5: { food: 200, gold: 300 }
 
-let gameTime = parseInt(localStorage.getItem('gameTime')) || 0;
+    // New levels to be added...
+};
+
+let productionLevels = {
+    farms: {
+        1: 15,
+        2: 25,
+        3: 40,
+        4: 55,
+        5: 75
+
+        // New levels to be added...
+    },
+    mines: {
+        1: 20,
+        2: 35,
+        3: 60,
+        4: 80,
+        5: 100
+
+        // New levels to be added...
+    },
+    houses: {
+        1: 5,
+        2: 10,
+        3: 15,
+        4: 20,
+        5: 25
+
+        // New levels to be added...
+    }
+};
+
 let resources = {
     level: 1,
     population: 10,
-    food: 20,
+    food: 25,
     gold: 50,
     buildings: {
-        farms: { count: 2, farm1Level: 1, farm2Level: 1 },
-        mines: { count: 2, mine1Level: 1, mine2Level: 1 },
-        houses: { count: 2, house1Level: 1, house2Level: 1 },
-        maxCount: 5
+        farms: { count: 2, farms1Level: 1, farms2Level: 1, maxCount: 5 },
+        mines: { count: 2, mines1Level: 1, mines2Level: 1, maxCount: 5 },
+        houses: { count: 2, houses1Level: 1, houses2Level: 1, maxCount: 5 }
     }
 };
+
+const getProduction = (buildingType, level) => {
+    return productionLevels[buildingType]?.[level] || 0;
+};
+
+const getUpgradeCosts = (level) => {
+    return levelUpgradeCosts[level] || null;
+};
+
+let gameTime = parseInt(localStorage.getItem('gameTime')) || 0;
+
+function logAction(message) {
+    const logEntries = document.getElementById('logEntries');
+
+    if(!logEntries) {
+        console.error('Log entries not found!');
+        return;
+    }
+
+    const logEntry = document.createElement('p');
+    logEntry.textContent = message;
+    logEntries.prepend(logEntry);
+}
 
 function formatTime(seconds) {
     const hours = Math.floor(seconds / 3600);
@@ -35,37 +94,9 @@ function updateTimerDisplay() {
 function gameTick() {
     gameTime += 1;
     updateTimerDisplay();
-    if(gameTime % 3600 === 0) {
+    if(gameTime % 60 === 0) {
         increaseResources();
     }
-}
-
-const timerInterval = setInterval(gameTick, 1000);
-window.addEventListener('beforeunload', () => { localStorage.setItem('gameTime', gameTime); });
-
-function logAction(message) {
-    const logEntries = document.getElementById('logEntries');
-
-    if(!logEntries) {
-        console.error('Log entries container not found!');
-        return;
-    }
-
-    const logEntry = document.createElement('p');
-    logEntry.textContent = message;
-    logEntries.prepend(logEntry);
-}
-
-function getUpgradeRequirements(level) {
-    const requirements = buildingLogic.getUpgradeCosts(level);
-    if(!requirements) return 'No further upgrades available.';
-
-    let requirementText = 'Requires: ';
-    if(requirements.food) requirementText += `Food: ${requirements.food} `;
-    if(requirements.gold) requirementText += `Gold: ${requirements.gold} `;
-    if(requirements.population) requirementText += `population: ${requirements.population}`;
-
-    return requirementText.trim();
 }
 
 function calculateProduction(buildingType) {
@@ -80,31 +111,15 @@ function calculateProduction(buildingType) {
         const level = resources.buildings[buildingType][`${buildingType}${i}Level`];
 
         if(!level) {
-            console.warn(`Level for ${buildingType} ${i} is not defined.`);
+            console.warn(`Level for ${buildingType}${i} is not defined`);
             continue;
         }
 
-        const baseProduction = buildingLogic.getProduction(buildingType, level);
+        const baseProduction = getProduction(buildingType, level);
         totalProduction += baseProduction;
     }
 
-    console.log(`Total production for ${buildingType}: ${totalProduction}`);
     return totalProduction;
-}
-
-function increaseResources() {
-    try {
-        const farmProduction = calculateProduction('farms');
-        const mineProduction = calculateProduction('mines');
-
-        resources.food += farmProduction;
-        resources.gold += mineProduction;
-
-        logAction(`Resources increased: Food: +${farmProduction}, Gold: +${mineProduction}`);
-        updateResources();
-    } catch(error) {
-        console.error('Error in increaseResources: ', error.message);
-    }
 }
 
 function updateResources() {
@@ -120,15 +135,40 @@ function updateResources() {
     }
 }
 
+function increaseResources() {
+    try {
+        const farmProduction = calculateProduction('farms');
+        const mineProduction = calculateProduction('mines');
+
+        resources.food += farmProduction;
+        resources.gold += mineProduction;
+
+        logAction(`Resources increased: Food: ${farmProduction}, Gold: ${mineProduction}`);
+        updateResources();
+    } catch(err) {
+        console.error('Error in increaseResources: ', err.message);
+    }
+}
+
+const timerInterval = setInterval(gameTick, 1000);
+window.addEventListener('beforeunload', () => { localStorage.setItem('gameTime', gameTime); });
+
+function getUpgradeRequirements(level) {
+    const requirements = getUpgradeCosts(level);
+    if(!requirements) return 'No further upgrades available!';
+
+    let requirementText = 'Requires: ';
+    if(requirements.food) requirementText += `Food: ${requirements.food} `;
+    if(requirements.gold) requirementText += `Gold: ${requirements.gold} `;
+    if(requirements.population) requirementText += `Population: ${requirements.population}`;
+
+    return requirementText.trim();
+}
+
 function buildFarm() {
     const farmNumber = resources.buildings.farms.count + 1;
-    resources.buildings.farms[`farm${farmNumber}Level`] = 1;
+    resources.buildings.farms[`farms${farmNumber}Level`] = 1;
     resources.buildings.farms.count += 1;
-
-    if(resources.buildings.farms.count >= resources.buildings.maxCount + 1) {
-        return alert('You reached the max number of this building!');
-    }
-
     logAction(`New Farm ${farmNumber} built at Level 1.`);
     renderBuildingButtons();
     updateResources();
@@ -136,13 +176,8 @@ function buildFarm() {
 
 function buildMine() {
     const mineNumber = resources.buildings.mines.count + 1;
-    resources.buildings.mines[`mine${mineNumber}Level`] = 1;
+    resources.buildings.mines[`mines${mineNumber}Level`] = 1;
     resources.buildings.mines.count += 1;
-
-    if(resources.buildings.mines.count >= resources.buildings.maxCount + 1) {
-        alert('You reached the max number of this building!');
-    }
-
     logAction(`New Mine ${mineNumber} built at Level 1.`);
     renderBuildingButtons();
     updateResources();
@@ -150,28 +185,19 @@ function buildMine() {
 
 function buildHouse() {
     const houseNumber = resources.buildings.houses.count + 1;
-    resources.buildings.houses[`house${houseNumber}Level`] = 1;
+    resources.buildings.houses[`houses${houseNumber}Level`] = 1;
     resources.buildings.houses.count += 1;
-
-    if(resources.buildings.houses.count >= resources.buildings.maxCount + 1) {
-        return alert('You reached the max number of this building!');
-    }
-
     logAction(`New House ${houseNumber} built at Level 1.`);
     renderBuildingButtons();
     updateResources();
 }
 
 function upgradeFarm(farmNumber) {
-    const farmKey = `farm${farmNumber}Level`;
+    const farmKey = `farms${farmNumber}Level`;
     const nextLevel = resources.buildings.farms[farmKey] + 1;
-    const requirements = buildingLogic.getUpgradeCosts(nextLevel);
+    const requirements = getUpgradeCosts(nextLevel);
 
-    if(
-        resources.food >= requirements.food &&
-        resources.gold >= requirements.gold &&
-        (!requirements.population || resources.population >= requirements.population)
-    ) {
+    if(resources.food >= requirements.food && resources.gold >= requirements.gold && (!requirements.population || resources.population >= requirements.population)) {
         resources.food -= requirements.food;
         resources.gold -= requirements.gold;
         if(requirements.population) {
@@ -188,15 +214,11 @@ function upgradeFarm(farmNumber) {
 }
 
 function upgradeMine(mineNumber) {
-    const mineKey = `mine${mineNumber}Level`;
+    const mineKey = `mines${mineNumber}Level`;
     const nextLevel = resources.buildings.mines[mineKey] + 1;
-    const requirements = buildingLogic.getUpgradeCosts(nextLevel);
+    const requirements = getUpgradeCosts(nextLevel);
 
-    if(
-        resources.food >= requirements.food &&
-        resources.gold >= requirements.gold &&
-        (!requirements.population || resources.population >= requirements.population)
-    ) {
+    if(resources.food >= requirements.food && resources.gold >= requirements.gold && (!requirements.population || resources.population >= requirements.population)) {
         resources.food -= requirements.food;
         resources.gold -= requirements.gold;
         if(requirements.population) {
@@ -213,15 +235,11 @@ function upgradeMine(mineNumber) {
 }
 
 function upgradeHouse(houseNumber) {
-    const houseKey = `house${houseNumber}Level`;
+    const houseKey = `houses${houseNumber}Level`;
     const nextLevel = resources.buildings.houses[houseKey] + 1;
-    const requirements = buildingLogic.getUpgradeCosts(nextLevel);
+    const requirements = getUpgradeCosts(nextLevel);
 
-    if(
-        resources.food >= requirements.food &&
-        resources.gold >= requirements.gold &&
-        (!requirements.population || resources.population >= requirements.population)
-    ) {
+    if(resources.food >= requirements.food && resources.gold >= requirements.gold && (!requirements.population || resources.population >= requirements.population)) {
         resources.food -= requirements.food;
         resources.gold -= requirements.gold;
         if(requirements.population) {
@@ -241,9 +259,8 @@ function renderBuildingButtons() {
     const buildingActions = document.getElementById('buildingActions');
     buildingActions.innerHTML = '';
 
-
     for(let i = 1; i <= resources.buildings.farms.count; i++) {
-        const currentLevel = resources.buildings.farms[`farm${i}Level`];
+        const currentLevel = resources.buildings.farms[`farms${i}Level`];
         const nextLevel = currentLevel + 1;
         const upgradeFarmButton = document.createElement('button');
         upgradeFarmButton.className = 'tooltip';
@@ -259,7 +276,7 @@ function renderBuildingButtons() {
     }
 
     for(let i = 1; i <= resources.buildings.mines.count; i++) {
-        const currentLevel = resources.buildings.mines[`mine${i}Level`];
+        const currentLevel = resources.buildings.mines[`mines${i}Level`];
         const nextLevel = currentLevel + 1;
         const upgradeMineButton = document.createElement('button');
         upgradeMineButton.className = 'tooltip';
@@ -275,7 +292,7 @@ function renderBuildingButtons() {
     }
 
     for(let i = 1; i <= resources.buildings.houses.count; i++) {
-        const currentLevel = resources.buildings.houses[`house${i}Level`];
+        const currentLevel = resources.buildings.houses[`houses${i}Level`];
         const nextLevel = currentLevel + 1;
         const upgradeHouseButton = document.createElement('button');
         upgradeHouseButton.className = 'tooltip';
@@ -302,6 +319,10 @@ function renderBuildingButtons() {
 
     buildingActions.appendChild(buildFarmButton);
 
+    if(resources.buildings.farms.count == resources.buildings.farms.maxCount) {
+        buildFarmButton.disabled = true;
+    }
+
 
     const buildMineButton = document.createElement('button');
     buildMineButton.className = 'tooltip';
@@ -315,6 +336,10 @@ function renderBuildingButtons() {
 
     buildingActions.appendChild(buildMineButton);
 
+    if(resources.buildings.mines.count == resources.buildings.mines.maxCount) {
+        buildMineButton.disabled = true;
+    }
+
 
     const buildHouseButton = document.createElement('button');
     buildHouseButton.className = 'tooltip';
@@ -327,8 +352,12 @@ function renderBuildingButtons() {
     buildHouseButton.appendChild(buildHouseTooltip);
 
     buildingActions.appendChild(buildHouseButton);
+
+    if(resources.buildings.houses.count == resources.buildings.houses.maxCount) {
+        buildHouseButton.disabled = true;
+    }
 }
 
 renderBuildingButtons();
-updateResources();
 updateTimerDisplay();
+updateResources();
