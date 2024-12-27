@@ -8,11 +8,12 @@ Date of deployment: 30/12/2024 10:00 AM
 Account creator, civilization chooser and player profile comes to the game soon!
 It is a tons of new features coming to the game:
 
+* Bug fixes
 * Account registration
-* Civilization chooser
+* Civilization chooser (no active effects)
 * Background images for every html pages so far
 * Profile for your account (currently no multiplayer)
-* Automatically saving and loading the game state of players (to be tested)
+* Automatically saving and loading the game state of players
 * Game log gets deprecated due to complications during its development (later it may be reintroduced)
 
 This time, these features are the upcoming changes and updates about!<br /><br /><br />
