@@ -15,8 +15,8 @@ It is a tons of new features coming to the game:
 * Automatically saving and loading the game state of players (to be tested)
 * Game log gets deprecated due to complications during its development (later it may be reintroduced)
 
-This time, these features are the upcoming changes and updates about!<br />
-About the game, see the mini-article below:
+This time, these features are the upcoming changes and updates about!<br /><br /><br />
+#### About the game, see the mini-article below:
 
 # What is CivilWars?
 
