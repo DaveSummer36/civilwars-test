@@ -50,7 +50,7 @@ let resources = {
     }
 };
 
-const targetDate = new Date('December 30, 2024 10:00:00').getTime();
+const targetDate = new Date('December 30, 2024 10:00:00');
 
 const getProduction = (buildingType, level) => {
     return productionLevels[buildingType]?.[level] || 0;
@@ -94,7 +94,7 @@ function updateTimerDisplay() {
 }
 
 function updateCountDown() {
-    const now = new Date().getTime();
+    const now = new Date();
     const distance = targetDate - now;
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
