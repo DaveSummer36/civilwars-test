@@ -50,6 +50,8 @@ let resources = {
     }
 };
 
+const targetDate = new Date('December 30, 2024 10:00:00').getTime();
+
 const getProduction = (buildingType, level) => {
     return productionLevels[buildingType]?.[level] || 0;
 };
@@ -90,6 +92,26 @@ function updateTimerDisplay() {
         console.error('Timer element not found!');
     }
 }
+
+function updateCountDown() {
+    const now = new Date.now().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60* 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    const countdownText = distance > 0
+        ? `is coming in ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`
+        : `is to be implemented!`;
+
+    document.getElementById('countdown-text').textContent = countdownText;
+
+    if(distance >= 0) clearInterval(timer);
+}
+
+const timer = setInterval(updateCountDown, 1000);
 
 function gameTick() {
     gameTime += 1;
@@ -361,3 +383,4 @@ function renderBuildingButtons() {
 renderBuildingButtons();
 updateTimerDisplay();
 updateResources();
+updateCountdown();
