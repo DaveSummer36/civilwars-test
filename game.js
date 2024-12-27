@@ -50,8 +50,6 @@ let resources = {
     }
 };
 
-const targetDate = new Date('December 30, 2024 10:00:00');
-
 const getProduction = (buildingType, level) => {
     return productionLevels[buildingType]?.[level] || 0;
 };
@@ -94,15 +92,16 @@ function updateTimerDisplay() {
 }
 
 function updateCountDown() {
+    const targetDate = new Date('2024-12-30T10:00:00');
     const now = new Date();
-    const distance = targetDate - now;
+    const difference = targetDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60* 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60* 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    const countdownText = distance > 0
+    const countdownText = difference > 0
         ? `is coming in ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`
         : `is to be implemented!`;
 
