@@ -1,5 +1,20 @@
 # CIVILWARS - Work in Progress Civilization Game
 
+## CIVILWARS NEWS - New update comes in the following days
+
+Get ready! Alpha v1.1.0 is around us!
+Account creator, civilization chooser and player profile comes to the game soon!
+It is a tons of new features coming to the game:
+
+* Account registration
+* Profile for your account
+* Civilization chooser
+* Background images for every html page so far
+
+Currently these are the upcoming changes and updates about!
+
+# What is CivilWars?
+
 CivilWars is a <ins>text-based, civilization developer browser game</ins> which
 extends this experience to the next level.
 Discover, explore, conquer, upgrade, build... Everything you need is here!
