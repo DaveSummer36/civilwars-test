@@ -106,7 +106,7 @@ function updateCountDown() {
         ? `is coming in ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`
         : `is to be implemented!`;
 
-    document.getElementById('countdown-text').textContent = countdownText;
+    document.getElementById('announcement').textContent = countdownText;
 
     if(distance >= 0) clearInterval(timer);
 }
