@@ -94,7 +94,7 @@ function updateTimerDisplay() {
 }
 
 function updateCountDown() {
-    const now = new Date.now().getTime();
+    const now = new Date().getTime();
     const distance = targetDate - now;
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -383,4 +383,4 @@ function renderBuildingButtons() {
 renderBuildingButtons();
 updateTimerDisplay();
 updateResources();
-updateCountdown();
+updateCountDown();
