@@ -14,6 +14,7 @@ It is a tons of new features coming to the game:
 * Background images for every html pages so far
 * Profile for your account (currently no multiplayer)
 * Automatically saving and loading the game state of players
+* News feed arrives to CivilWars to make further events' description and news spreading easier
 * Game log gets deprecated due to complications during its development (later it may be reintroduced)
 
 This time, these features are the upcoming changes and updates about!<br /><br /><br />
