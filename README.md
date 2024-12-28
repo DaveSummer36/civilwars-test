@@ -17,8 +17,8 @@ It is a tons of new features coming to the game:
 * News feed arrives to CivilWars to make further events' description and news spreading easier
 * Game log gets deprecated due to complications during its development (later it may be reintroduced)
 
-This time, these features are the upcoming changes and updates about!<br /><br /><br />
-#### About the game, see the mini-article below:
+This time, these features are the upcoming changes and updates about!<br /><br />
+#### About the game, <ins>see the mini-article below:</ins><br />
 
 # What is CivilWars?
 
