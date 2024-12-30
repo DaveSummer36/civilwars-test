@@ -52,6 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         localStorage.setItem('selectedCivilization', selectedCivilization);
-        window.location.href = '../../index.html';
+        window.location.href = '../index.html';
     });
 });
