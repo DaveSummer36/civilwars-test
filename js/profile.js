@@ -36,5 +36,5 @@ window.addEventListener('click', (event) => {
 
 logoutButton.onclick = () => {
     localStorage.removeItem('loggedInUser');
-    window.location.href = '../auth/login.html';
+    window.location.href = './auth/login.html';
 };
