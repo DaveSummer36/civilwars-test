@@ -88,7 +88,7 @@ if (loginForm) {
         localStorage.setItem('loggedInUser', JSON.stringify(user));
         alert('Login successful! Redirecting to CivilWars!');
         if(chosenCiv === null || !chosenCiv) window.location.href = './civilization_chooser.html';
-        else window.location.href = '../../index.html';
+        else window.location.href = '../index.html';
     });
 }
 
