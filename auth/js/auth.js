@@ -68,7 +68,7 @@ function register() {
     localStorage.setItem('users', JSON.stringify(users));
 
     alert('Registration successful! Redirecting to login page...');
-    window.location.href = './login.html';
+    window.location.href = 'DaveSummer36.github.io/civilwars-test/auth/login.html';
 }
 
 if (loginForm) {
