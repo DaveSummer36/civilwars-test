@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Register for CivilWars</title>
+    <link referrerpolicy="origin" rel="stylesheet" type="text/css" href="./css/auth.css" />
+    <link rel="icon" type="ico/image" href="../assets/images/favicon.ico" />
+
+</head>
+
+<body class="register-bg">
+    <div class="form-container">
+        <h1>Register</h1>
+        <form id="registerForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username..." required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email..." required />
+
+            <label for="confirmEmail">Confirm Email</label>
+            <input type="email" id="confirmEmail" name="confirmEmail" placeholder="Confirm your email..." required />
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password here..." required />
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password..." required />
+
+            <label for="age">Age - no age restriction (only for research purposes)</label>
+            <input type="number" id="age" name="age" placeholder="Enter age..." required />
+
+            <button type="submit" onclick="register()">Register</button>
+
+            <p>Already have an account! <a href="./login.html">Login here!</a></p>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="./js/auth.js"></script>
+</body>
+</html>

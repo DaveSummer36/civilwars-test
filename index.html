@@ -2,25 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>CivilWars</title>
-    <link referrerpolicy="origin" rel="stylesheet" type="text/css" href="game_layout.css" />
+    <link referrerpolicy="origin" rel="stylesheet" type="text/css" href="./css/game_layout.css" />
+    <link rel="icon" type="ico/image" href="./assets/images/favicon.ico" />
 
 </head>
 
-<body>
+<body class="game-bg">
     <header>
         <h1>Welcome to Civilization Wars</h1>
         <div id="timer" style="position: absolute; top: 10px; right: 10px;">00:00:00</div>
+        <button id="profileButton">Profile</button>
     </header>
 
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span id="close-button">&times;</span>
+            <h2>Player Profile</h2>
+            <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+            <p><strong>Civilization:</strong> <span id="profileCiv"></span></p>
+            <p><strong>Level:</strong> <span id="profileLevel"></span></p>
+            <p><strong>XP:</strong> <span id="profileXP"></span></p>
+            <p><strong>Player Tag:</strong> <span id="playerTag"></span></p>
+            <button id="logoutButton">Logout</button>
+        </div>
+    </div>
+
     <main>
-        <br /><section id="announcement">
-            <p style="text-align: center;">A bigger update</p>
-                <strong><p style="text-align: center;" id="text-content">is coming soon!</p></strong>
-            <p style="text-align: center;">Stay tuned and see more details on the <a href="https://github.com/DaveSummer36/civilwars-test">GitHub</a> Page!</p>
-        </section><br />
-        
         <section id="resources">
             <h2>Your resources</h2>
             <p>Population: <span id="population">0</span></p>
@@ -36,20 +46,31 @@
         <section id="actions">
             <h2>Actions</h2>
             <div id="buildingActions">
-                
+                <!-- Building actions to be rendered here -->
+
             </div>
             <button onclick="explore()">Explore</button>
             <button onclick="trade()">Trade</button>
         </section>
 
-        <section id="log">
-            <h2>Game Log - deprecated from Alpha v1.1.0</h2>
-            <div id="logEntries">
-                <!-- Logs will appear here -->
+        <section id="newsFeed">
+            <h2>CivilWars News</h2>
+            <div id="newsContent">
+                <!-- NewsFeed content goes here -->
+
+                <div class="article-card">
+                    <img src="./assets/images/register_background.png" alt="Game background" class="thumbnail" />
+                    <div class="content">
+                        <h3>CivilWars Alpha v1.1.0 is here!</h3>
+                        <a href="https://github.com/DaveSummer36/civilwars-test" target="_blank" class="read-more">Read More</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <script type="module" referrerpolicy="origin" src="game.js"></script>
+    <script type="module" src="./js/game.js"></script>
+    <script type="text/javascript" src="./js/global.js"></script>
+    <script type="text/javascript" src="./js/profile.js"></script>
 </body>
 </html>

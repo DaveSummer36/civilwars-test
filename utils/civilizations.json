@@ -1,0 +1,320 @@
+{
+    "civilizations": [
+      {
+        "name": "Vikings (Norse)",
+        "region": "Scandinavia",
+        "buffs": [
+          "+25% resource gain from raids and naval trade",
+          "Ships and naval units move 30% faster",
+          "Coastal settlements are 15% more resilient to attacks"
+        ],
+        "nerfs": [
+          "Farming and inland resource production reduced by 15%",
+          "Weaker defensive structures in non-coastal areas"
+        ]
+      },
+      {
+        "name": "Geats (Götaland, Sweden)",
+        "region": "Scandinavia",
+        "buffs": [
+          "+20% bonus to iron and metal production",
+          "Infantry units gain +10% attack strength in forested terrain"
+        ],
+        "nerfs": [
+          "Trade routes generate 15% fewer resources",
+          "Slower naval unit production"
+        ]
+      },
+      {
+        "name": "Danes (Denmark)",
+        "region": "Scandinavia",
+        "buffs": [
+          "Mercenaries and hired units cost 20% less",
+          "Coastal cities gain +10% resource production",
+          "Diplomatic influence over neighboring factions increased"
+        ],
+        "nerfs": [
+          "Military unit movement speed reduced in mountainous terrain",
+          "Defensive structures are 10% more expensive to build"
+        ]
+      },
+      {
+        "name": "Svear (Svealand, Sweden)",
+        "region": "Scandinavia",
+        "buffs": [
+          "Bonus to trade and early gold generation",
+          "Units gain +15% attack bonus when defending their home territory"
+        ],
+        "nerfs": [
+          "Slower research of naval technologies",
+          "Resource production penalty (-10%) in harsh winter conditions"
+        ]
+      },
+      {
+        "name": "Kvenland (Northern Scandinavia)",
+        "region": "Scandinavia",
+        "buffs": [
+          "Settlements in tundra or snowy areas are 20% more efficient",
+          "Units gain cold resistance, reducing winter combat penalties by 50%"
+        ],
+        "nerfs": [
+          "Reduced trade influence due to isolation (-20% trade income)",
+          "Naval units are 15% slower"
+        ]
+      },
+      {
+        "name": "Sami (Lapland)",
+        "region": "Scandinavia",
+        "buffs": [
+          "+25% hunting and gathering resource production",
+          "Units move faster in snowy and forested terrain"
+        ],
+        "nerfs": [
+          "Weak city defenses and slower construction of fortified structures",
+          "Poor naval capabilities (-20% naval unit attack power)"
+        ]
+      },
+      {
+        "name": "Sumerians",
+        "region": "Mesopotamia",
+        "buffs": [
+          "+20% resource production from rivers",
+          "Early access to advanced agriculture"
+        ],
+        "nerfs": [
+          "-10% to military defense due to lack of fortifications"
+        ]
+      },
+      {
+        "name": "Babylonians",
+        "region": "Mesopotamia",
+        "buffs": [
+          "+15% cultural influence",
+          "Gain bonus points from diplomatic actions"
+        ],
+        "nerfs": [
+          "Higher construction costs for military buildings"
+        ]
+      },
+      {
+        "name": "Hittites",
+        "region": "Anatolia",
+        "buffs": [
+          "+25% strength for siege units",
+          "Cheaper access to iron weapons"
+        ],
+        "nerfs": [
+          "Slower research time for cultural upgrades"
+        ]
+      },
+      {
+        "name": "Assyrians",
+        "region": "Mesopotamia",
+        "buffs": [
+          "+20% attack for all units",
+          "Faster recruitment speed"
+        ],
+        "nerfs": [
+          "Lower resource generation due to over-reliance on conquest"
+        ]
+      },
+      {
+        "name": "Carthaginians",
+        "region": "Africa",
+        "buffs": [
+          "+30% income from trade",
+          "Naval units cost 25% less"
+        ],
+        "nerfs": [
+          "Reduced effectiveness of land units in desert terrain"
+        ]
+      },
+      {
+        "name": "Nubians",
+        "region": "Africa",
+        "buffs": [
+          "Bonus to gold production",
+          "Faster construction of monumental buildings"
+        ],
+        "nerfs": [
+          "-10% efficiency for military units in non-desert regions"
+        ]
+      },
+      {
+        "name": "Axumite Empire",
+        "region": "Africa",
+        "buffs": [
+          "Trade routes generate +20% resources",
+          "Conversion rate of foreign cities increased"
+        ],
+        "nerfs": [
+          "Slower early-game resource collection"
+        ]
+      },
+      {
+        "name": "Great Zimbabwe",
+        "region": "Africa",
+        "buffs": [
+          "+15% bonus to stone and gold collection",
+          "Extra defensive strength in settlements"
+        ],
+        "nerfs": [
+          "Higher maintenance costs for advanced units"
+        ]
+      },
+      {
+        "name": "Celts",
+        "region": "Europe",
+        "buffs": [
+          "Forest-based resource production increased by 25%",
+          "Ambush tactics give military units +20% attack"
+        ],
+        "nerfs": [
+          "Slower city development speed"
+        ]
+      },
+      {
+        "name": "Vandals",
+        "region": "Europe",
+        "buffs": [
+          "Raiding generates additional resources",
+          "Stronger early-game cavalry units"
+        ],
+        "nerfs": [
+          "Weak late-game infrastructure development"
+        ]
+      },
+      {
+        "name": "Visigoths",
+        "region": "Europe",
+        "buffs": [
+          "Bonus to infantry strength in hilly terrain",
+          "+10% loot from defeated enemies"
+        ],
+        "nerfs": [
+          "Slower resource collection rates"
+        ]
+      },
+      {
+        "name": "Etruscans",
+        "region": "Europe",
+        "buffs": [
+          "Cultural buildings provide +15% influence",
+          "Advanced architecture available earlier"
+        ],
+        "nerfs": [
+          "Reduced military unit health"
+        ]
+      },
+      {
+        "name": "Scythians",
+        "region": "Central Asia",
+        "buffs": [
+          "Cavalry units move 30% faster and deal +15% damage",
+          "Nomadic units cost less to recruit"
+        ],
+        "nerfs": [
+          "Settlements are more vulnerable to attacks"
+        ]
+      },
+      {
+        "name": "Xiongnu",
+        "region": "Central Asia",
+        "buffs": [
+          "+20% to ranged attack units",
+          "Gain extra loot from battles"
+        ],
+        "nerfs": [
+          "-15% penalty to city defense"
+        ]
+      },
+      {
+        "name": "Kushan Empire",
+        "region": "Central Asia",
+        "buffs": [
+          "Bonus to Silk Road trade",
+          "Religious buildings grant extra resources"
+        ],
+        "nerfs": [
+          "Weaker military units in desert terrain"
+        ]
+      },
+      {
+        "name": "Indus Valley Civilization",
+        "region": "South Asia",
+        "buffs": [
+          "Early access to sanitation, reducing disease effects",
+          "Resource storage capacity increased by 20%"
+        ],
+        "nerfs": [
+          "Weak military capabilities overall"
+        ]
+      },
+      {
+        "name": "Gupta Empire",
+        "region": "South Asia",
+        "buffs": [
+          "+20% research speed",
+          "Temples generate bonus resources"
+        ],
+        "nerfs": [
+          "Slower unit recruitment"
+        ]
+      },
+      {
+        "name": "Shang Dynasty",
+        "region": "East Asia",
+        "buffs": [
+          "Bonus to bronze production",
+          "Early-game military strength increased"
+        ],
+        "nerfs": [
+          "Reduced cultural influence over neighboring regions"
+        ]
+      },
+      {
+        "name": "Yamato Clan",
+        "region": "East Asia",
+        "buffs": [
+          "Naval units deal +20% more damage",
+          "Defensive structures cost less"
+        ],
+        "nerfs": [
+          "Slower production of land units"
+        ]
+      },
+      {
+        "name": "Olmecs",
+        "region": "Americas",
+        "buffs": [
+          "+15% agricultural output",
+          "Unique monuments generate cultural bonuses"
+        ],
+        "nerfs": [
+          "Weaker military strength compared to neighboring civilizations"
+        ]
+      },
+      {
+        "name": "Maya",
+        "region": "Americas",
+        "buffs": [
+          "Advanced calendar system provides resource bonuses",
+          "Temples grant additional cultural influence"
+        ],
+        "nerfs": [
+          "Limited naval capabilities"
+        ]
+      },
+      {
+        "name": "Aztecs",
+        "region": "Americas",
+        "buffs": [
+          "Military units have +20% combat efficiency",
+          "Sacrificial rituals provide temporary bonuses"
+        ],
+        "nerfs": [
+          "Weaker economic development"
+        ]
+      }
+    ]
+  }

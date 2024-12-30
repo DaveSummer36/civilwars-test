@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Choose your Civilization</title>
+    <link referrerpolicy="origin" rel="stylesheet" type="text/css" href="./css/auth.css" />
+    <link rel="icon" type="ico/image" href="../assets/images/favicon.ico" />
+
+</head>
+
+<body class="chooser-bg">
+    <div class="form-container">
+        <h1>Choose your Civilization</h1>
+        <form id="civilizationForm">
+            <label for="civilizationSelect">Civilization</label>
+            <select id="civilizationSelect" name="civilizationSelect">
+                <option value="" disabled selected>-- Select Civilization --</option>
+                <!-- Civilizations go here... -->
+
+            </select>
+
+            <div id="civilizationPreview" class="preview-box">
+                <h2>Civilization Details</h2>
+                <p id="civilizationDetails">Select a civilization to see details here.</p>
+            </div>
+
+            <div id="alertMessage" style="text-align: center; color: red;"></div>
+            <button type="submit">Confirm</button>
+        </form>
+    </div>
+    
+    <script type="text/javascript" src="./js/civChooser.js"></script>
+</body>
+</html>
