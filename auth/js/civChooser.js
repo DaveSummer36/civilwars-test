@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     alertMessage.textContent = 'ATTENTION: You won\'t be able to change your civilization later!';
 
-    fetch('../../utils/civilizations.json')
+    fetch('../utils/civilizations.json')
         .then(response => {
             if(!response.ok) throw new Error(`Error fetching civilizations: ${response.statusText}`);
 
