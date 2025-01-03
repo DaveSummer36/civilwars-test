@@ -19,8 +19,8 @@ function generatePlayerTag() {
     return playerTag;
 }
 
-
-registrationForm.addEventListener('submit', (event) => {
+if(registrationForm) {
+    registrationForm.addEventListener('submit', (event) => {
     event.preventDefault();
     
    const username = document.getElementById('username').value.trim();
@@ -72,8 +72,9 @@ registrationForm.addEventListener('submit', (event) => {
     alert('Registration successful! Redirecting to login page...');
     window.location.href = './login.html'; 
 });
+}
 
-if (loginForm) {
+if(loginForm) {
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const username = document.getElementById('username').value.trim();
