@@ -20,8 +20,10 @@ function generatePlayerTag() {
 }
 
 
-function register() {
-    const username = document.getElementById('username').value.trim();
+registrationForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    
+   const username = document.getElementById('username').value.trim();
     const email = document.getElementById('email').value.trim();
     const confirmEmail = document.getElementById('confirmEmail').value.trim();
     const password = document.getElementById('password').value;
@@ -68,8 +70,8 @@ function register() {
     localStorage.setItem('users', JSON.stringify(users));
 
     alert('Registration successful! Redirecting to login page...');
-    window.location.href = './login.html';
-}
+    window.location.href = './login.html'; 
+});
 
 if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
