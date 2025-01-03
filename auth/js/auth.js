@@ -1,4 +1,4 @@
-const registrationForm = document.getElementById('registrationForm');
+const registrationForm = document.getElementById('registerForm');
 const loginForm = document.getElementById('loginForm');
 const chosenCiv = localStorage.getItem('selectedCivilization') || null;
 
