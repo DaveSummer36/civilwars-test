@@ -4,7 +4,7 @@
 ## CivilWars - Alpha v1.2.0 - The Exploration Update
 
 CivilWars next huge update is arriving soon! The theme of it will be Exploration, so the <ins>Explore button</ins> will get its functitonality.
-The game gets enhanced and upgraded as the UI will remain the same (the UI won't be upgrade soon)!
+The game gets enhanced and upgraded as the UI will remain the same (no UI upgrade soon)!
 New goals, new features, new buildings... That's the Exploration Update
 
 ### Here is the list of all the <ins>planned features:</ins>
