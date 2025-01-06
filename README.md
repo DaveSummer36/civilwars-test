@@ -36,12 +36,12 @@ Discover, explore, conquer, upgrade, build... Everything you need is here!
 2. Collecting resources - fixed in v1.0.2
 3. Product/hour (currently product per minute) (only counts if window's opened, elapsed time save/resume) - fixed in v1.0.2
 4. Actions log to see what happened (currently resets after reloading the page) - deprecated
-5. Player profiles introduced
-6. News feed
-7. Login/registration
-8. Civilization choosing
+5. Player profiles introduced - added in v1.1.0
+6. News feed - to replace Game Log in v1.1.0
+7. Login/registration - added in v1.1.0
+8. Civilization choosing - added in v1.1.0
 
 So far, this is what it does.
-I hope once the project wil launch. Now, it's only a hobby project.
+I hope once the project will launch. Now, it's only a hobby project.
 
-I accept any types of help. Contacts are in my profile.
+I accept any kind of help, suggestions. Contacts in my profile.
