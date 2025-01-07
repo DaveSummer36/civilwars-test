@@ -22,8 +22,12 @@ For now, that's it. These are the features planned to be released by Alpha v1.2.
 ### CivilWars - Alpha v1.2.0 - The Exploration Update - coming on March 26th, 2025
 
 Stay tuned for more details!
-
+If you want to find out what CivilWars is, read the article below!
+|
+|
+ˇ
 ---
+# What is CivilWars?
 
 CivilWars is a <ins>text-based, civilization developer browser game</ins> which
 extends this experience to the next level.
