@@ -23,9 +23,7 @@ For now, that's it. These are the features planned to be released by Alpha v1.2.
 
 Stay tuned for more details!
 If you want to find out what CivilWars is, read the article below!
-|
-|
-ˇ
+
 ---
 # What is CivilWars?
 
