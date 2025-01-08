@@ -30,6 +30,22 @@
         </div>
     </div>
 
+    <div id="releaseModal" class="modal">
+        <div class="modal-content">
+            <span id="closeRM-button">&times;</span>
+            <h2>CivilWars - Alpha v1.1.1 Features</h2>
+            <h4 style="text-align: center;">Coming on February 1st, 2025</h4>
+            <ul>
+                <li>New resource collection mechanism</li>
+                <li>New resource calculation mechanism</li>
+                <li>Population now gets calculated as it should be</li>
+                <li>Elapsed time based resource collection instead of farming in every 5 seconds</li>
+            </ul>
+
+            <p>Later on, it will be developed further and will be enhanced!</p>
+        </div>
+    </div>
+
     <main>
         <section id="resources">
             <h2>Your resources</h2>
@@ -59,10 +75,28 @@
                 <!-- NewsFeed content goes here -->
 
                 <div class="article-card">
+                    <img src="./assets/images/background1.png" alt="Game background" class="thumbnail" />
+                    <div class="content">
+                        <h3>CivilWars - Alpha v1.1.1 announced</h3>
+                        <p>See more details after clicking on 'Read More'!</p>
+                        <p class="read-more" id="releaseModalP">Read More</p>
+                    </div>
+                </div>
+
+                <div class="article-card">
                     <img src="./assets/images/register_background.png" alt="Game background" class="thumbnail" />
                     <div class="content">
-                        <h3>CivilWars - Alpha v1.2.0 - The Exploration Update</h3>
-                        <p>See more details on the GitHub page!</p>
+                        <h3>CivilWars Alpha v1.2.0 - The Exploration Update</h3>
+                        <p>See more details on GitHub!</p>
+                        <a href="https://github.com/DaveSummer36/civilwars-test" target="_blank" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <img src="./assets/images/register_background.png" alt="Game background" class="thumbnail" />
+                    <div class="content">
+                        <h3>CivilWars Alpha v1.1.0 is here!</h3>
+                        <p>Read the release notes on Github!</p>
                         <a href="https://github.com/DaveSummer36/civilwars-test" target="_blank" class="read-more">Read More</a>
                     </div>
                 </div>
@@ -71,6 +105,7 @@
     </main>
 
     <script type="module" src="./js/game.js"></script>
+    <script type="text/javascript" src="./js/modal.js"></script>
     <script type="text/javascript" src="./js/global.js"></script>
     <script type="text/javascript" src="./js/profile.js"></script>
 </body>
