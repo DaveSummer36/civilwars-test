@@ -142,19 +142,6 @@ function calcutatePopulation() {
     populationIndicator.textContent = totalHousePopulation;
 }
 
-function updateResources() {
-    try {
-        populationIndicator.textContent = playerData.population;
-        foodIndicator.textContent = playerData.food;
-        goldIndicator.textContent = playerData.gold;
-        farmCountIndicator.textContent = buildings.farms.count;
-        mineCountIndicator.textContent = buildings.mines.count;
-        houseCountIndicator.textContent = buildings.houses.count;
-    } catch(err) {
-        console.error('Error in updateResources: ', err.message);
-    }
-}
-
 function increaseResources() {
     try {
         const farmProduction = calculateProduction('farms');
@@ -194,6 +181,19 @@ function getUpgradeRequirements(level) {
     if(requirements.population) requirementText += `Population: ${requirements.population}`;
 
     return requirementText.trim();
+}
+
+function updateResources() {
+    try {
+        populationIndicator.textContent = playerData.population;
+        foodIndicator.textContent = playerData.food;
+        goldIndicator.textContent = playerData.gold;
+        farmCountIndicator.textContent = buildings.farms.count;
+        mineCountIndicator.textContent = buildings.mines.count;
+        houseCountIndicator.textContent = buildings.houses.count;
+    } catch(err) {
+        console.error('Error in updateResources: ', err.message);
+    }
 }
 
 function buildFarm() {
