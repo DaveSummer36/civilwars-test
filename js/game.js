@@ -142,19 +142,6 @@ function calcutatePopulation() {
     populationIndicator.textContent = totalHousePopulation;
 }
 
-function increaseResources() {
-    try {
-        const farmProduction = calculateProduction('farms');
-        const mineProduction = calculateProduction('mines');
-
-        playerData.food += farmProduction;
-        playerData.gold += mineProduction;
-        updateResources();
-    } catch(err) {
-        console.error('Error in increaseResources: ', err.message);
-    }
-}
-
 const timerInterval = setInterval(gameTick, 1000);
 window.addEventListener('beforeunload', () => {
     localStorage.setItem('gameTime', gameTime);
