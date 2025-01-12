@@ -110,7 +110,7 @@ function updateTimerDisplay() {
 function gameTick() {
     gameTime += 1;
     updateTimerDisplay();
-    if(gameTime % 5 === 0) increaseResources();
+    if(gameTime % 10 === 0) increaseResources();
 }
 
 function calculateProduction(buildingType) {
@@ -211,10 +211,12 @@ function buildFarm() {
         if(requirements.population) {
             playerData.population -= requirements.population;
         }
-    }
 
-    renderBuildingButtons();
-    updateResources();
+        renderBuildingButtons();
+        updateResources();
+    } else {
+        alert('Not enough resources to build!');
+    }
 }
 
 function buildMine() {
@@ -232,11 +234,12 @@ function buildMine() {
         if(requirements.population) {
             playerData.population -= requirements.population;
         }
-    }
-    
 
-    renderBuildingButtons();
-    updateResources();
+        renderBuildingButtons();
+        updateResources();
+    } else {
+        alert('Not enough resources to build!');
+    }
 }
 
 function buildHouse() {
@@ -254,11 +257,13 @@ function buildHouse() {
         if(requirements.population) {
             playerData.population -= requirements.population;
         }
-    }
 
-    renderBuildingButtons();
-    calcutatePopulation();
-    updateResources();
+        renderBuildingButtons();
+        calcutatePopulation();
+        updateResources();
+    } else {
+        alert('Not enough resources to build!');
+    }
 }
 
 function upgradeFarm(farmNumber) {
