@@ -202,15 +202,15 @@ function buildFarm() {
         return;
     }
 
-    const farmNumber = buildings.farms.count + 1;
-    buildings.farms[`farms${farmNumber}Level`] = 1;
-    buildings.farms.count += 1;
     const requirements = getUpgradeCosts(1);
-
     if (playerData.food < requirements.food || playerData.gold < requirements.gold || (requirements.population && playerData.population < requirements.population)) {
         alert('Not enough resources to build!');
         return;
     }
+
+    const farmNumber = buildings.farms.count + 1;
+    buildings.farms[`farms${farmNumber}Level`] = 1;
+    buildings.farms.count += 1;
 
     playerData.food -= requirements.food;
     playerData.gold -= requirements.gold;
@@ -228,15 +228,15 @@ function buildMine() {
         return;
     }
 
-    const mineNumber = buildings.mines.count + 1;
-    buildings.mines[`mines${mineNumber}Level`] = 1;
-    buildings.mines.count += 1;
     const requirements = getUpgradeCosts(1);
-
     if (playerData.food < requirements.food || playerData.gold < requirements.gold || (requirements.population && playerData.population < requirements.population)) {
         alert('Not enough resources to build!');
         return;
     }
+
+    const mineNumber = buildings.mines.count + 1;
+    buildings.mines[`mines${mineNumber}Level`] = 1;
+    buildings.mines.count += 1;
 
     playerData.food -= requirements.food;
     playerData.gold -= requirements.gold;
@@ -254,15 +254,15 @@ function buildHouse() {
         return;
     }
 
-    const houseNumber = buildings.houses.count + 1;
-    buildings.houses[`houses${houseNumber}Level`] = 1;
-    buildings.houses.count += 1;
     const requirements = getUpgradeCosts(1);
-
     if (playerData.food < requirements.food || playerData.gold < requirements.gold || (requirements.population && playerData.population < requirements.population)) {
         alert('Not enough resources to build!');
         return;
     }
+
+    const houseNumber = buildings.houses.count + 1;
+    buildings.houses[`houses${houseNumber}Level`] = 1;
+    buildings.houses.count += 1;
 
     playerData.food -= requirements.food;
     playerData.gold -= requirements.gold;
