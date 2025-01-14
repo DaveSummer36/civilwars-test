@@ -202,9 +202,10 @@ function buildFarm() {
     buildings.farms.count += 1;
     const requirements = getUpgradeCosts(1);
 
-    if(playerData.food >= requirements.food &&
-      playerData.gold && requirements.gold &&
-      (!requirements.population || playerData.population >= requirements.population)) {
+    if(playerData.food < requirements.food && playerData.gold < requirements.gold && (playerData.population < requirements.population)) {
+        alert('Not enough resources to build!');
+        return;
+    } else {
         playerData.food -= requirements.food;
         playerData.gold -= requirements.gold;
         
@@ -214,9 +215,6 @@ function buildFarm() {
 
         renderBuildingButtons();
         updateResources();
-    } else {
-        alert('Not enough resources to build!');
-        return;
     }
 }
 
@@ -226,9 +224,10 @@ function buildMine() {
     buildings.mines.count += 1;
     const requirements = getUpgradeCosts(1);
 
-    if(playerData.food >= requirements.food &&
-      playerData.gold && requirements.gold &&
-      (!requirements.population || playerData.population >= requirements.population)) {
+    if(playerData.food < requirements.food && playerData.gold < requirements.gold && (playerData.population < requirements.population)) {
+        alert('Not enough resources to build!');
+        return;
+    } else {
         playerData.food -= requirements.food;
         playerData.gold -= requirements.gold;
         
@@ -238,9 +237,6 @@ function buildMine() {
 
         renderBuildingButtons();
         updateResources();
-    } else {
-        alert('Not enough resources to build!');
-        return;
     }
 }
 
@@ -250,9 +246,10 @@ function buildHouse() {
     buildings.houses.count += 1;
     const requirements = getUpgradeCosts(1);
 
-    if(playerData.food >= requirements.food &&
-      playerData.gold && requirements.gold &&
-      (!requirements.population || playerData.population >= requirements.population)) {
+    if(playerData.food < requirements.food && playerData.gold < requirements.gold && (playerData.population < requirements.population)) {
+        alert('Not enough resources to build!');
+        return;
+    } else {
         playerData.food -= requirements.food;
         playerData.gold -= requirements.gold;
         
@@ -261,11 +258,7 @@ function buildHouse() {
         }
 
         renderBuildingButtons();
-        calcutatePopulation();
         updateResources();
-    } else {
-        alert('Not enough resources to build!');
-        return;
     }
 }
 
@@ -274,22 +267,19 @@ function upgradeFarm(farmNumber) {
     const nextLevel = buildings.farms[farmKey] + 1;
     const requirements = getUpgradeCosts(nextLevel);
 
-    if(playerData.food >= requirements.food &&
-        playerData.gold >= requirements.gold
-        && (!requirements.population || playerData.population >= requirements.population)) {
-            playerData.food -= requirements.food;
-            playerData.gold -= requirements.gold;
-
-            if(requirements.population) {
+    if(playerData.food < requirements.food && playerData.gold < requirements.gold && (playerData.population < requirements.population)) {
+        alert('Not enough resources to build!');
+        return;
+    } else {
+        playerData.food -= requirements.food;
+        playerData.gold -= requirements.gold;
+        
+        if(requirements.population) {
             playerData.population -= requirements.population;
         }
 
-        buildings.farms[farmKey] += 1;
         renderBuildingButtons();
         updateResources();
-    } else {
-        alert('Not enough resources to upgrade!');
-        return;
     }
 }
 
@@ -298,22 +288,19 @@ function upgradeMine(mineNumber) {
     const nextLevel = buildings.mines[mineKey] + 1;
     const requirements = getUpgradeCosts(nextLevel);
 
-    if(playerData.food >= requirements.food &&
-        playerData.gold >= requirements.gold
-        && (!requirements.population || playerData.population >= requirements.population)) {
-            playerData.food -= requirements.food;
-            playerData.gold -= requirements.gold;
-
-            if(requirements.population) {
+    if(playerData.food < requirements.food && playerData.gold < requirements.gold && (playerData.population < requirements.population)) {
+        alert('Not enough resources to build!');
+        return;
+    } else {
+        playerData.food -= requirements.food;
+        playerData.gold -= requirements.gold;
+        
+        if(requirements.population) {
             playerData.population -= requirements.population;
         }
 
-        buildings.mines[mineKey] += 1;
         renderBuildingButtons();
         updateResources();
-    } else {
-        alert('Not enough resources to upgrade!');
-        return;
     }
 }
 
@@ -322,23 +309,19 @@ function upgradeHouse(houseNumber) {
     const nextLevel = buildings.houses[houseKey] + 1;
     const requirements = getUpgradeCosts(nextLevel);
 
-    if(playerData.food >= requirements.food &&
-        playerData.gold >= requirements.gold
-        && (!requirements.population || playerData.population >= requirements.population)) {
-            playerData.food -= requirements.food;
-            playerData.gold -= requirements.gold;
-
-            if(requirements.population) {
+    if(playerData.food < requirements.food && playerData.gold < requirements.gold && (playerData.population < requirements.population)) {
+        alert('Not enough resources to build!');
+        return;
+    } else {
+        playerData.food -= requirements.food;
+        playerData.gold -= requirements.gold;
+        
+        if(requirements.population) {
             playerData.population -= requirements.population;
         }
 
-        buildings.houses[houseKey] += 1;
         renderBuildingButtons();
-        calcutatePopulation();
         updateResources();
-    } else {
-        alert('Not enough resources to upgrade!');
-        return;
     }
 }
 
