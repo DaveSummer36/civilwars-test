@@ -421,5 +421,6 @@ function renderBuildingButtons() {
 }
 
 renderBuildingButtons();
+calculatePopulation();
 updateTimerDisplay();
 updateResources();
