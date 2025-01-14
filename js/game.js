@@ -216,6 +216,7 @@ function buildFarm() {
         updateResources();
     } else {
         alert('Not enough resources to build!');
+        return;
     }
 }
 
@@ -239,6 +240,7 @@ function buildMine() {
         updateResources();
     } else {
         alert('Not enough resources to build!');
+        return;
     }
 }
 
@@ -263,6 +265,7 @@ function buildHouse() {
         updateResources();
     } else {
         alert('Not enough resources to build!');
+        return;
     }
 }
 
@@ -286,6 +289,7 @@ function upgradeFarm(farmNumber) {
         updateResources();
     } else {
         alert('Not enough resources to upgrade!');
+        return;
     }
 }
 
@@ -309,6 +313,7 @@ function upgradeMine(mineNumber) {
         updateResources();
     } else {
         alert('Not enough resources to upgrade!');
+        return;
     }
 }
 
@@ -333,6 +338,7 @@ function upgradeHouse(houseNumber) {
         updateResources();
     } else {
         alert('Not enough resources to upgrade!');
+        return;
     }
 }
 
