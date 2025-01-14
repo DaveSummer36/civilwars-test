@@ -216,6 +216,10 @@ function buildFarm() {
         renderBuildingButtons();
         updateResources();
     }
+
+    if(buildings.farms.count >= buildings.farms.maxCount) {
+        alert('Max number of farms reached!');
+    }
 }
 
 function buildMine() {
@@ -238,6 +242,10 @@ function buildMine() {
         renderBuildingButtons();
         updateResources();
     }
+
+    if(buildings.mines.count >= buildings.mines.maxCount) {
+        alert('Max number of mines reached!');
+    }
 }
 
 function buildHouse() {
@@ -259,6 +267,10 @@ function buildHouse() {
 
         renderBuildingButtons();
         updateResources();
+    }
+
+    if(buildings.houses.count >= buildings.houses.maxCount) {
+        alert('Max number of houses reached!');
     }
 }
 
