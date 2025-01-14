@@ -82,6 +82,13 @@ const farmCountIndicator = document.getElementById('farms');
 const mineCountIndicator = document.getElementById('mines');
 const buildingActions = document.getElementById('buildingActions');
 
+document.addEventListener('DOMContentLoaded', () => {
+    updateTimerDisplay();
+    updateResources();
+    renderBuildingButtons();
+    calculatePopulation();
+});
+
 const getProduction = (buildingType, level) => {
     return productionLevels[buildingType]?.[level] || 0;
 };
