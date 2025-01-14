@@ -266,6 +266,7 @@ function buildHouse() {
         }
 
         renderBuildingButtons();
+        calculatePopulation();
         updateResources();
     }
 
