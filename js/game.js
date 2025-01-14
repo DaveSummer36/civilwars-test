@@ -375,9 +375,10 @@ function renderBuildingButtons() {
             const nextLevel = currentLevel + 1;
 
             const isMaxLevel = nextLevel > Object.keys(productionLevels[buildingType]).length;
+            const displayName = buildingType.slice(0, -1);  // Remove last letter
             const text = isMaxLevel
-                ? `${buildingType.charAt(0).toUpperCase() + buildingType.slice(1)} ${i} (Max Level)`
-                : `Upgrade ${buildingType.charAt(0).toUpperCase() + buildingType.slice(1)} ${i} to Level ${nextLevel}`;
+                ? `${displayName.charAt(0).toUpperCase() + displayName.slice(1)} ${i} (Max Level)`
+                : `Upgrade ${displayName.charAt(0).toUpperCase() + displayName.slice(1)} ${i} to Level ${nextLevel}`;
             const tooltipText = isMaxLevel ? 'Max level reached!' : getUpgradeRequirements(nextLevel);
 
             const extraStyles = isMaxLevel ? { backgroundColor: 'green', color: 'black' } : {};
@@ -393,7 +394,8 @@ function renderBuildingButtons() {
             groupDiv.appendChild(upgradeButton);
         }
 
-        const buildText = `Build New ${buildingType.charAt(0).toUpperCase() + buildingType.slice(1)}`;
+        const displayName = buildingType.slice(0, -1);  // Remove last letter
+        const buildText = `Build New ${displayName.charAt(0).toUpperCase() + displayName.slice(1)}`;
         const buildTooltipText = count >= maxCount ? 'Max count reached!' : getUpgradeRequirements(1);
         const extraStyles = count >= maxCount
             ? { backgroundColor: 'gray', color: 'black' }
