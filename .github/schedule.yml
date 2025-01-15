@@ -1,0 +1,43 @@
+name: Schedule Website Visibility
+
+on:
+	schedule:
+		- cron: "0 22 * * *"
+		- cron: "0 7 * * *"
+
+jobs:
+	make_invisible:
+		runs-on: ubuntu-latest
+		if: ${{ github.event.schedule == '0 22 * * *' }}
+		steps:
+			- name: Checkout repository
+			  uses: actions/checkout@v2
+
+			- name: Rename all .html files to hide the site
+			  run: |
+			  	for file in *.html; do
+					mv "$file" "${file%.html}.hidden.html"
+				done
+
+			- name: Commit changes
+			  run: |
+				git config --global user.name 'github-actions'
+				git config --global user.email 'github-actions@github.com'
+				git add .
+				git commit -m "Shut down website at 22:00"
+				git push
+
+	make_visible:
+		runs_on: ubuntu-latest
+		if: ${{ github.event.schedule == '0 7 * * *' }}
+		steps:
+			- name: Checkout repository
+			  uses: actions/checkout@v2
+
+			- name: Rename .hidden.html files to show the site
+			  run: |
+			  	git config --global user.name 'github-actions'
+				git config --global user.email 'github-actions@github.com'
+				git add .
+				git commit -m "Show website at 7:00"
+				git push
