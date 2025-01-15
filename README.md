@@ -3,7 +3,7 @@
 ---
 ## CivilWars - Alpha v1.2.0 - The Exploration Update
 
-CivilWars next huge update is arriving soon! The theme of it will be Exploration, so the <ins>Explore button</ins> will get its functitonality.
+CivilWars next huge update is arriving soon! The theme of it will be Exploration, so the <ins>Explore button</ins> will get its functionality.
 The game gets enhanced and upgraded as the UI will remain the same (no UI upgrade soon)!
 New goals, new features, new buildings... That's the Exploration Update
 
@@ -12,7 +12,7 @@ New goals, new features, new buildings... That's the Exploration Update
 * World Map gets added
 * Exploration gets added as a whole
 * World Map's area will be from -100 to 100 coordinates
-* New way of  collecting resources (buttons and new calculation system, arriving in Alpha v1.1.1)
+* New way of collecting resources (buttons and new calculation system, arriving in Alpha v1.1.1)
 * New buildings: Intel and Outpost (dependent of each other)
 * Exploration: Intel-like game mechanism
 * Intel level system and quests based on the Intel's level
